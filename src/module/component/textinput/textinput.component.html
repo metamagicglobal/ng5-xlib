@@ -1,0 +1,31 @@
+<div class="inputgroup ">
+
+  <label [attr.for]="elementId" [style.font-style]="fontStyle" [style.font-family]="fontFamily" [style.font-size]="fontSize">
+    {{fieldLabel}}
+  </label>
+
+  <input type="text" class="input-control"
+         [ngClass]="{'input-control-error':error, 'input-control-success':success}"
+         [(ngModel)]="value"
+         (blur)="onBlur()"
+         (focus)="onFocus()"
+         [attr.fieldName] = "fieldName"
+         [attr.id]="elementId"
+         [attr.placeholder]="placeholder"
+         [attr.maxLength]="maxLength"
+         [attr.minLength]="minLength"
+         [attr.disabled] = "disabled ? true: null"
+         [required]="allowBlank ? true: null"/>
+
+  <span *ngIf="iconFeedBack && (error || success)" class="input-control-feedback">
+        <span *ngIf="error" class="error">&#9888;</span>
+        <span *ngIf="success" class="success"> &#10004;</span>
+
+      </span>
+
+
+  <span *ngIf="showToolTip && enablePopOver" class="tooltiptext">
+        <div  [innerHTML]="helpInfoMsg"></div>
+      </span>
+
+</div>

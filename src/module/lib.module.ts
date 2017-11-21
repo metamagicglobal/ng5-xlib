@@ -3,6 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { LibComponent } from './component/lib.component';
 import { LibService } from './service/lib.service';
+import {AmxTextComponent} from './component/textinput/textinput.component';
 
 // Export module's public API
 export { LibComponent } from './component/lib.component';
@@ -12,8 +13,8 @@ export { LibService } from './service/lib.service';
   imports: [
     CommonModule
   ],
-  exports: [LibComponent],
-  declarations: [LibComponent]
+  exports: [LibComponent, AmxTextComponent],
+  declarations: [LibComponent, AmxTextComponent]
 })
 export class LibModule {
   static forRoot(): ModuleWithProviders {
