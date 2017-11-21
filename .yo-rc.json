@@ -1,0 +1,32 @@
+{
+  "generator-ngx-library": {
+    "version": "5.1.0",
+    "authorName": "meta-magic-global",
+    "authorEmail": "xserviceadmin@metamagic.in",
+    "githubUsername": "metamagicglobal",
+    "githubRepoName": "ng5-xlib",
+    "projectName": "ng5-xlib",
+    "projectVersion": "0.0.1",
+    "projectDescription": "Angular library built with ❤ using ngx-library yeoman generator.",
+    "projectKeywords": [
+      "ng",
+      "angular",
+      "library"
+    ],
+    "ngVersion": "5.0.0",
+    "ngModules": [
+      "core",
+      "common",
+      "forms",
+      "http",
+      "platform-browser"
+    ],
+    "otherDependencies": [],
+    "dependenciesRange": "^",
+    "ngPrefix": "amx",
+    "useGreenkeeper": true,
+    "useCompodoc": true,
+    "enforceNgGitCommitMsg": true,
+    "exclusions": []
+  }
+}
