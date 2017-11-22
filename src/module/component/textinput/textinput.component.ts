@@ -22,37 +22,88 @@ export const BASE_IMPL_TEXT_INPUT: any = {
   providers : [CUSTOM_TEXT_INPUT_CONTROL_VALUE_ACCESSOR, BASE_IMPL_TEXT_INPUT],
   styleUrls: ['./textinput.component.scss']
 })
-export class AmxTextComponent extends FormInputBase implements OnInit, ControlValueAccessor, AfterViewInit {
-  constructor() {
-    super();
-    this.elementId = 'input-text-' + Math.floor(Math.random()*90000) + 10000;
+export class AmxTextComponent implements ControlValueAccessor{
+
+
+  @Input()   fieldLabel: string;
+
+  @Input()   minLength: number;
+
+  @Input()   maxLength: number;
+
+  @Input()   allowBlank: string;
+
+  helpInfoMsg: string;
+
+  regEx : RegExp ;
+
+  showToolTip : boolean;
+
+  _errorMsg : string;
+
+  get errorMsg(): string {
+    return this._errorMsg;
   }
 
-  ngOnInit() {
-    if (this.errorMsg) {
-      this.helpInfoMsg = this.errorMsg + '<br/>';
-    }
+  @Input('errorMsg')
+  set errorMsg(value: string) {
+    this.helpInfoMsg = value + '<br/>';
+  }
 
-    if (this.minErrorMsg) {
-      this.helpInfoMsg = this.helpInfoMsg + '<b>Min Length<b/>: ' + this.minErrorMsg + '<br/>';
-    }
+  _minErrorMsg : string;
+
+  get minErrorMsg() : string{
+    return this._minErrorMsg;
+  }
+
+  @Input('minErrorMsg')
+  set minErrorMsg(value : string){
+    this.helpInfoMsg = this.helpInfoMsg + '<b>Min Length<b/>: ' + value + '<br/>';
+  }
+
+  _maxErrorMsg : string;
+
+  get maxErrorMsg() : string{
+    return this._maxErrorMsg;
+  }
+
+  @Input('maxErrorMsg')
+  set maxErrorMsg(value : string){
+    this.helpInfoMsg = this.helpInfoMsg + 'Max Length: ' + value;
+  }
 
 
-    if (this.maxErrorMsg) {
-      this.helpInfoMsg = this.helpInfoMsg + 'Max Length: ' + this.maxErrorMsg;
-    }
+  @Input()   placeholder: string;
 
-    if (this.pattern != null) {
+  @Input()   disabled: boolean;
+
+  @Input()   iconFeedBack: boolean;
+
+  @Input()   fontStyle: string;
+
+  @Input()   fontFamily: string;
+
+  @Input()   fontSize: string;
+
+  @Input()   hasLabel: boolean = true;
+
+  _pattern : string;
+
+  get pattern() : string{
+    return this._pattern;
+  }
+
+  @Input('pattern')
+  set pattern(value : string){
+    if(value!=null)
       this.regEx = new RegExp(this.pattern);
-    }
-
-
   }
 
-  ngAfterViewInit(){
+  @Input()   enablePopOver : boolean;
 
+  constructor() {
+    this.showToolTip = false;
   }
-
 
   // The internal dataviews model
   private innerValue: any = '';
@@ -78,7 +129,6 @@ export class AmxTextComponent extends FormInputBase implements OnInit, ControlVa
   //Set touched on blur
   onBlur() {
     this.onTouchedCallback();
-    this.validate();
     this.showToolTip = false;
   }
 
@@ -102,31 +152,7 @@ export class AmxTextComponent extends FormInputBase implements OnInit, ControlVa
     this.onTouchedCallback = fn;
   }
 
-
-  isValidInput() : any {
-    let hasError = false;
-    let valueLength = 0;
-
-    if(this.value != null) {
-      valueLength = this.value.length;
-    }
-
-    if((this.allowBlank && (!this.value || valueLength==0))){
-      hasError = true;
-    }else if(this.pattern != null && !this.regEx.test(this.value)){
-      hasError = true;
-    }
-    else if(this.minLength > valueLength){
-      hasError = true;
-    }else if(this.maxLength < valueLength){
-      hasError = true;
-    }
-
-    this.error = hasError;
-    this.success = !hasError;
-
-    return hasError;
-  }
 }
+
 
 

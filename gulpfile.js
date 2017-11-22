@@ -342,7 +342,7 @@ gulp.task('rollup-bundle', (cb) => {
     const es5Input = path.join(es5OutputFolder, `${config.unscopedLibraryName}.js`);
     const es2015Input = path.join(es2015OutputFolder, `${config.unscopedLibraryName}.js`);
     const globals = {
-      // Angular dependencies 
+      // Angular dependencies
       '@angular/core': 'ng.core',
       '@angular/common': 'ng.common',
       '@angular/forms': 'ng.forms',
@@ -373,7 +373,7 @@ gulp.task('rollup-bundle', (cb) => {
       // ATTENTION:
       // Add any other dependency or peer dependency of your library here
       // This is required for UMD bundle users.
-      
+
     };
     const rollupBaseConfig = {
       name: _.camelCase(config.libraryName),
@@ -446,7 +446,7 @@ gulp.task('build:doc', (cb) => {
       tsconfig: 'src/tsconfig.lib.json',
       hideGenerator:true,
       disableCoverage: true,
-      output: `{config.outputDemoDir}/doc/`
+      output: `${config.outputDemoDir}doc/`
     })
   ], cb);
 });
