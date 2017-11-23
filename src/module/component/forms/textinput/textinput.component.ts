@@ -1,25 +1,19 @@
-import {AfterViewInit, Component, forwardRef, Input, OnInit} from '@angular/core';
-import {FormInputBase} from '../formbase/form.base.class';
+import {Component, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 const noop = () => {
 };
 
-export const CUSTOM_TEXT_INPUT_CONTROL_VALUE_ACCESSOR: any = {
+export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => AmxTextComponent),
   multi: true
 };
 
-export const BASE_IMPL_TEXT_INPUT: any = {
-  provide : FormInputBase,
-  useExisting: forwardRef(() => AmxTextComponent)
-};
-
 @Component({
   selector: 'amx-text-component',
   templateUrl: './textinput.component.html',
-  providers : [CUSTOM_TEXT_INPUT_CONTROL_VALUE_ACCESSOR, BASE_IMPL_TEXT_INPUT],
+  providers : [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR],
   styleUrls: ['./textinput.component.scss']
 })
 export class AmxTextComponent implements ControlValueAccessor{
