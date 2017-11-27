@@ -2,7 +2,7 @@
   <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/metamagicglobal/ng5-xlib/master/demo/src/assets/logo.svg">
 </p>
 
-# ng5-xlib - Angular library built with ❤ using ngx-library yeoman generator.
+# ng5-xlib - Angular library built with ❤.
 
 [![npm version](https://badge.fury.io/js/ng5-xlib.svg)](https://badge.fury.io/js/ng5-xlib)
 [![Build Status](https://travis-ci.org/metamagicglobal/ng5-xlib.svg?branch=master)](https://travis-ci.org/metamagicglobal/ng5-xlib)
