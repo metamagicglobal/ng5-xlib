@@ -271,7 +271,7 @@ gulp.task('compile', (cb) => {
 
 // Build the 'dist' folder (without publishing it to NPM)
 gulp.task('build', ['clean'], (cb) => {
-  runSequence('compile', 'test', 'npm-package', 'rollup-bundle', cb);
+  runSequence('compile', 'test', 'npm-package', 'rollup-bundle', 'stylesheets', cb);
 });
 
 // Same as 'build' but without cleaning temp folders (to avoid breaking demo app, if currently being served)
@@ -435,6 +435,12 @@ gulp.task('rollup-bundle', (cb) => {
   });
 });
 
+gulp.task('stylesheets', function () {
+  gulp.src('./src/themes/amx.theme.css')
+    .pipe(gulp.dest('./dist/themes/'));
+});
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 // Documentation Tasks
@@ -461,7 +467,6 @@ gulp.task('serve:doc', ['clean:doc'], (cb) => {
     })
   ], cb);
 });
-
 
 
 /////////////////////////////////////////////////////////////////////////////
