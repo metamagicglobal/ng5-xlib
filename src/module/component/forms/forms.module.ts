@@ -6,6 +6,8 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {AmxTextComponent} from "./textinput/textinput.component";
 import {CheckBoxComponent} from "./checkbox/checkbox.component";
+import {CommonDataService} from "../../service/common.data.service";
+import {RadioGroupComponent} from "./radiogroup/radiogroup.component";
 
 // Export module's public API
 
@@ -14,14 +16,14 @@ import {CheckBoxComponent} from "./checkbox/checkbox.component";
     CommonModule,
     FormsModule
   ],
-  exports: [AmxTextComponent,CheckBoxComponent],
-  declarations: [AmxTextComponent,CheckBoxComponent]
+  exports: [AmxTextComponent,CheckBoxComponent,RadioGroupComponent],
+  declarations: [AmxTextComponent,CheckBoxComponent,RadioGroupComponent]
 })
 export class AmxFormsModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: AmxFormsModule,
-      providers: []
+      providers: [CommonDataService]
     };
   }
 }

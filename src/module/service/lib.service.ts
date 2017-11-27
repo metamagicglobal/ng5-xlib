@@ -10,8 +10,6 @@ export class LibService {
     return `Hello ${name || 'Stanger'}!`;
   }
 
-
-
   setMaterial(){
     this.isMaterial = true
   }

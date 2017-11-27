@@ -3,9 +3,10 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { LibComponent } from './component/lib.component';
 import { LibService } from './service/lib.service';
-import {AmxTextComponent} from './component/forms/textinput/textinput.component';
 import {FormsModule} from "@angular/forms";
-import {CheckBoxComponent} from "./component/forms/checkbox/checkbox.component";
+import {AmxFormsModule} from "./component/forms/forms.module";
+import {HttpModule} from "@angular/http";
+import {CommonDataService} from "./service/common.data.service";
 
 // Export module's public API
 export { LibComponent } from './component/lib.component';
@@ -14,16 +15,18 @@ export { LibService } from './service/lib.service';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AmxFormsModule,
+    HttpModule
   ],
-  exports: [LibComponent, AmxTextComponent,CheckBoxComponent],
-  declarations: [LibComponent, AmxTextComponent,CheckBoxComponent]
+  exports: [LibComponent],
+  declarations: [LibComponent]
 })
 export class LibModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: LibModule,
-      providers: [LibService]
+      providers: [LibService,CommonDataService]
     };
   }
 }

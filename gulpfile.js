@@ -446,7 +446,7 @@ gulp.task('build:doc', (cb) => {
       tsconfig: 'src/tsconfig.lib.json',
       hideGenerator:true,
       disableCoverage: true,
-      output: `${config.outputDemoDir}doc/`
+      output: `docs/doc/`
     })
   ], cb);
 });
@@ -457,7 +457,7 @@ gulp.task('serve:doc', ['clean:doc'], (cb) => {
     gulpCompodoc({
       tsconfig: 'src/tsconfig.lib.json',
       serve: true,
-      output: `${config.outputDir}/doc/`
+      output: `docs/doc/`
     })
   ], cb);
 });
