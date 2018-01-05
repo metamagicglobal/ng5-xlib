@@ -69,7 +69,7 @@
     "gulp-inline-ng2-template": "4.0.0",
     "gulp-hub": "0.8.0",
     "gulp-util": "3.0.8",
-    "html-loader": "0.5.1",
+    "html-loader": "0.5.4",
     "istanbul-instrumenter-loader": "3.0.0",
     "jasmine-core": "2.8.0",
     "karma": "1.7.1",
