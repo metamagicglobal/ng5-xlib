@@ -81,7 +81,7 @@
     "karma-remap-coverage": "0.1.4",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.6",
-    "pump": "1.0.3",
+    "pump": "2.0.1",
     "rollup": "0.51.8",
     "rollup-plugin-uglify": "2.0.1",
     "rollup-plugin-sourcemaps": "0.4.2",
