@@ -55,7 +55,7 @@
     "angular-cli-ghpages": "0.5.1",
     "angular2-template-loader": "0.6.2",
     "@compodoc/gulp-compodoc": "0.0.8",
-    "commitplease": "3.1.0",
+    "commitplease": "3.2.0",
     "conventional-github-releaser": "2.0.0",
     "core-js": "2.5.1",
     "del": "3.0.0",
