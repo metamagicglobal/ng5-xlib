@@ -70,7 +70,7 @@
     "gulp-hub": "0.8.0",
     "gulp-util": "3.0.8",
     "html-loader": "0.5.1",
-    "istanbul-instrumenter-loader": "3.0.0",
+    "istanbul-instrumenter-loader": "3.0.1",
     "jasmine-core": "2.8.0",
     "karma": "1.7.1",
     "karma-chrome-launcher": "2.2.0",
