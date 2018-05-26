@@ -57,7 +57,7 @@
     "@compodoc/gulp-compodoc": "0.0.8",
     "commitplease": "3.1.0",
     "conventional-github-releaser": "2.0.0",
-    "core-js": "2.5.1",
+    "core-js": "2.5.7",
     "del": "3.0.0",
     "greenkeeper-lockfile": "1.12.0",
     "gulp": "3.9.1",
