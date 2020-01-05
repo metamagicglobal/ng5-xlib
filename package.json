@@ -52,7 +52,7 @@
     "@angular/animations" : "5.0.0",
     "@types/jasmine": "2.5.41",
     "@types/node": "8.0.53",
-    "angular-cli-ghpages": "0.5.1",
+    "angular-cli-ghpages": "0.6.2",
     "angular2-template-loader": "0.6.2",
     "@compodoc/gulp-compodoc": "0.0.8",
     "commitplease": "3.1.0",
